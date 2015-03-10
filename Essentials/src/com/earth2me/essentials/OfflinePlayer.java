@@ -1,8 +1,5 @@
 package com.earth2me.essentials;
 
-import static com.earth2me.essentials.I18n.tl;
-import java.net.InetSocketAddress;
-import java.util.*;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.conversations.Conversation;
@@ -22,6 +19,11 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.util.Vector;
+
+import java.net.InetSocketAddress;
+import java.util.*;
+
+import static com.earth2me.essentials.I18n.tl;
 
 
 public class OfflinePlayer implements Player
@@ -250,19 +252,34 @@ public class OfflinePlayer implements Player
 		throw new UnsupportedOperationException(tl("notSupportedYet"));
 	}
 
-	@Override
+    @Override
+    public List<Block> getLineOfSight(Set<Material> set, int i) {
+        return null;
+    }
+
+    @Override
 	public Block getTargetBlock(HashSet<Byte> hs, int i)
 	{
 		throw new UnsupportedOperationException(tl("notSupportedYet"));
 	}
 
-	@Override
+    @Override
+    public Block getTargetBlock(Set<Material> set, int i) {
+        return null;
+    }
+
+    @Override
 	public List<Block> getLastTwoTargetBlocks(HashSet<Byte> hs, int i)
 	{
 		throw new UnsupportedOperationException(tl("notSupportedYet"));
 	}
 
-	@Override
+    @Override
+    public List<Block> getLastTwoTargetBlocks(Set<Material> set, int i) {
+        return null;
+    }
+
+    @Override
 	public int getFireTicks()
 	{
 		throw new UnsupportedOperationException(tl("notSupportedYet"));

@@ -1,10 +1,5 @@
 package com.earth2me.essentials.craftbukkit;
 
-import java.io.File;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
 import org.bukkit.*;
 import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
@@ -15,6 +10,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.MetadataValue;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
+
+import java.io.File;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 
 public class FakeWorld implements World
@@ -736,7 +737,12 @@ public class FakeWorld implements World
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
-	@Override
+    @Override
+    public WorldBorder getWorldBorder() {
+        return null;
+    }
+
+    @Override
 	public boolean createExplosion(double d, double d1, double d2, float f, boolean bln, boolean bln1)
 	{
 		throw new UnsupportedOperationException("Not supported yet.");
