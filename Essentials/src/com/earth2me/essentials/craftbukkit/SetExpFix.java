@@ -46,15 +46,19 @@ public class SetExpFix
 
 	public static int getExpAtLevel(final int level)
 	{
-		if (level > 29)
+		if (level > 30)
 		{
-			return 62 + (level - 30) * 7;
+			//return 62 + (level - 30) * 7;
+			return 4.5*Math.pow(level, 2) - 162.5*level + 2220;
+			
 		}
 		if (level > 15)
 		{
-			return 17 + (level - 15) * 3;
+			//return 17 + (level - 15) * 3;
+			return 2.5*Math.pow(level, 2) - 40.5 * level + 360;
 		}
-		return 17;
+		//return 17;
+		return Math.pow(level, 2) + (6 * level);
 	}
 	
 	public static int getExpToLevel(final int level)
