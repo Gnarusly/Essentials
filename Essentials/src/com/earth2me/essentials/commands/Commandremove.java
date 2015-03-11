@@ -292,6 +292,7 @@ public class Commandremove extends EssentialsCommand
                             e.remove();
                             removed++;
                         }
+                        break;
 					case CUSTOM:
 						for (Mob type : customRemoveTypes)
 						{
