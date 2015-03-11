@@ -1,16 +1,18 @@
 package com.earth2me.essentials.commands;
 
 import com.earth2me.essentials.CommandSource;
-import static com.earth2me.essentials.I18n.tl;
 import com.earth2me.essentials.Mob;
 import com.earth2me.essentials.User;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 import org.bukkit.Chunk;
 import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.entity.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import static com.earth2me.essentials.I18n.tl;
 
 // This could be rewritten in a simpler form if we made a mapping of all Entity names to their types (which would also provide possible mod support)
 
@@ -279,10 +281,17 @@ public class Commandremove extends EssentialsCommand
 					case ALL:
 						if (e instanceof Entity)
 						{
-							e.remove();
-							removed++;
+                            if (!(e instanceof ArmorStand)) {
+                                e.remove();
+                                removed++;
+                            }
 						}
 						break;
+                    case ARMOR_STAND:
+                        if (e instanceof ArmorStand) {
+                            e.remove();
+                            removed++;
+                        }
 					case CUSTOM:
 						for (Mob type : customRemoveTypes)
 						{
@@ -321,6 +330,7 @@ public class Commandremove extends EssentialsCommand
 		ALL,
 		CUSTOM,
 		TAMED,
-		NAMED
+		NAMED,
+        ARMOR_STAND
 	}
 }
